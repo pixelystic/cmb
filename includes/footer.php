@@ -19,8 +19,4 @@
     <!-- Custom JavaScript -->
     <script src="js/sl-news.js"></script>
 </body>
-</html>
-<?php
-    //Close connection
-    mysql_close($connection);
-?>
+</html> 

@@ -5,17 +5,17 @@
                     </div>
                         <ul class="list-unstyled news-paper-e-list">
                             <?php
-                                $result = mysql_query("
+								$result = dbConnect::getInstance()->query("
                                                       SELECT * FROM news_papers
                                                       WHERE language_id = 1
                                                       ORDER BY news_paper_name ASC
-                                                      ", $connection);
+                                                      ");
                                 
                                 if(!$result){
-                                    die("Database query failed:" . mysql_error());
+                                    die("Database query failed:");
                                 }
                                 
-                                while($row = mysql_fetch_array($result)){
+                                foreach($result as $row){
                                     echo "<li class=\"sidebar-list\"><a href=\"" .  $row["news_paper_link"]. "\" rel=\"nofollow\" target=\"_blank\" class=\"list-group-item\">" . $row["news_paper_name"] . "</a></li>";
                                 }
                             ?>
@@ -28,17 +28,17 @@
                     </div>
                         <ul class="list-unstyled news-paper-e-list">
                             <?php
-                                $result = mysql_query("
+                                $result = dbConnect::getInstance()->query("
                                                       SELECT * FROM news_papers
                                                       WHERE language_id = 2
                                                       ORDER BY news_paper_name ASC
-                                                      ", $connection);
+                                                      ");
                                 
                                 if(!$result){
-                                    die("Database query failed:" . mysql_error());
+                                    die("Database query failed:");
                                 }
                                 
-                                while($row = mysql_fetch_array($result)){
+                                foreach($result as $row){
                                     echo "<li class=\"sidebar-list\"><a href=\"" .  $row["news_paper_link"]. "\" rel=\"nofollow\" target=\"_blank\" class=\"list-group-item\">" . $row["news_paper_name"] . "</a></li>";
                                 }
                             ?>
